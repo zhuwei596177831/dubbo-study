@@ -9,7 +9,8 @@
 
     <dubbo:application name="dubbo-consumer"/>
 
-    <dubbo:registry client="curator" address="zookeeper://127.0.0.1:2181"/>
+<!--    <dubbo:registry client="curator" address="zookeeper://127.0.0.1:2181"/>-->
+    <dubbo:registry client="curator" address="nacos://127.0.0.1:8848"/>
 
     <dubbo:reference timeout="4000" retries="0" id="demoService" generic="true"
                      interface="com.zhuweiwei.dubbo.provider.server.DemoService">

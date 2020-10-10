@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class BootConsumerAction {
 
-    @DubboReference
+    @DubboReference(loadbalance = "roundrobin")
     BootDemoService bootDemoService;
 
     public String doSayHello(String name) {

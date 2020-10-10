@@ -20,9 +20,10 @@ public class ApiProviderStarter {
 
         ApplicationConfig applicationConfig = new ApplicationConfig("api-dubbo-provider");
 
-        RegistryConfig registryConfig = new RegistryConfig("zookeeper://127.0.0.1:2181");
+        RegistryConfig registryConfig = new RegistryConfig("nacos://127.0.0.1:8848");
+//        RegistryConfig registryConfig = new RegistryConfig("zookeeper://127.0.0.1:2181");
 
-        ProtocolConfig protocolConfig = new ProtocolConfig("dubbo", 20881);
+        ProtocolConfig protocolConfig = new ProtocolConfig("dubbo", -1);
 
         ServiceConfig<DemoService> demoServiceServiceConfig = new ServiceConfig<>();
         demoServiceServiceConfig.setApplication(applicationConfig);

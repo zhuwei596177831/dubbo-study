@@ -7,6 +7,8 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.stream.IntStream;
+
 @SpringBootApplication
 public class BootDubboConsumerApplication implements ApplicationRunner {
 
@@ -19,6 +21,6 @@ public class BootDubboConsumerApplication implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        System.out.println(bootConsumerAction.doSayHello("Hello World"));
+        IntStream.range(0, 20).forEach(i -> System.out.println(bootConsumerAction.doSayHello("Hello World")));
     }
 }
