@@ -3,7 +3,12 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.5.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
     <groupId>org.example</groupId>
     <artifactId>dubbo-test-all</artifactId>
     <packaging>pom</packaging>
@@ -13,15 +18,18 @@
         <module>dubbo-provider</module>
         <module>dubbo-consumer</module>
         <module>dubbo-provider-1</module>
+        <module>boot-dubbo-provider</module>
+        <module>boot-dubbo-consumer</module>
     </modules>
-
     <properties>
         <dubbo.version>2.7.8</dubbo.version>
         <curator.version>5.1.0</curator.version>
         <fastjson.version>1.2.70</fastjson.version>
+        <dubbo-registry-nacos.version>2.7.8</dubbo-registry-nacos.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <!--        <maven.compiler.source>1.8</maven.compiler.source>-->
+        <!--        <maven.compiler.target>1.8</maven.compiler.target>-->
+        <java.version>1.8</java.version>
     </properties>
 
     <dependencyManagement>
@@ -45,6 +53,21 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-tx</artifactId>
                 <version>4.3.16.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-spring-boot-autoconfigure</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-registry-nacos</artifactId>
+                <version>${dubbo-registry-nacos.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
