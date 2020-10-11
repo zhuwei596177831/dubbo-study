@@ -1,5 +1,6 @@
 package com.example.bootdubboprovider.service.impl;
 
+import com.zhuweiwei.dubbo.provider.entity.TestEntity;
 import com.zhuweiwei.dubbo.provider.server.BootDemoService;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.apache.dubbo.rpc.RpcContext;
@@ -20,5 +21,10 @@ public class BootDemoServiceImpl implements BootDemoService {
                 rpcContext.getMethodName(),
                 name,
                 name);
+    }
+
+    @Override
+    public TestEntity testEntity(TestEntity testEntity) {
+        return testEntity;
     }
 }

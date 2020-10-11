@@ -1,5 +1,6 @@
 package com.example.bootdubboconsumer.component;
 
+import com.zhuweiwei.dubbo.provider.entity.TestEntity;
 import com.zhuweiwei.dubbo.provider.server.BootDemoService;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.stereotype.Component;
@@ -18,6 +19,10 @@ public class BootConsumerAction {
 
     public String doSayHello(String name) {
         return bootDemoService.sayHello(name);
+    }
+
+    public TestEntity doTestEntity(TestEntity testEntity) {
+        return bootDemoService.testEntity(testEntity);
     }
 
 }

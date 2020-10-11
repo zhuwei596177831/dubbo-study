@@ -7,7 +7,8 @@ import com.alibaba.fastjson.JSON;
  * @date 2020-10-08 16:55:32
  * @description
  */
-public class TestEntity {
+public class TestEntity extends BaseEntity {
+    private static final long serialVersionUID = 9043235473989868709L;
     private String name;
     private Integer age;
 
